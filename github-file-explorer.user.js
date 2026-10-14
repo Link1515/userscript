@@ -1670,7 +1670,11 @@ const materialIcons = (() => {
         'fjt-row fjt-dir-row';
 
       summary.innerHTML = `
-        <span class="fjt-chevron">›</span>
+        <span class="fjt-chevron" aria-hidden="true">
+          <svg viewBox="0 0 10 16" width="10" height="16">
+            <path d="m3.5 5 3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
         <span class="fjt-folder-icon"></span>
         <span class="fjt-label"></span>
       `;
@@ -3049,15 +3053,19 @@ const materialIcons = (() => {
 
       .fjt-chevron {
         width: 10px;
+        height: 16px;
 
         flex:
           0 0 10px;
 
+        display:
+          flex;
+
+        align-items:
+          center;
+
         color:
           var(--fjt-muted);
-
-        font-size:
-          16px;
 
         transition:
           transform .08s ease;
